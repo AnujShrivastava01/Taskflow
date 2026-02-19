@@ -292,11 +292,11 @@ h6 {
    ============================================================= */
 .bg-mesh {
   background:
-    radial-gradient(at 40% 20%, rgba(238, 123, 21, 0.06) 0px, transparent 50%),
-    radial-gradient(at 80% 0%, rgba(241, 149, 53, 0.05) 0px, transparent 50%),
-    radial-gradient(at 0% 50%, rgba(222, 97, 11, 0.04) 0px, transparent 50%),
-    radial-gradient(at 80% 50%, rgba(219, 39, 119, 0.03) 0px, transparent 50%),
-    radial-gradient(at 0% 100%, rgba(238, 123, 21, 0.05) 0px, transparent 50%);
+    radial-gradient(at 40% 20%, rgba(14, 165, 233, 0.06) 0px, transparent 50%),
+    radial-gradient(at 80% 0%, rgba(0, 52, 238, 0.05) 0px, transparent 50%),
+    radial-gradient(at 0% 50%, rgba(3, 105, 161, 0.04) 0px, transparent 50%),
+    radial-gradient(at 80% 50%, rgba(37, 99, 235, 0.03) 0px, transparent 50%),
+    radial-gradient(at 0% 100%, rgba(14, 165, 233, 0.05) 0px, transparent 50%);
 }
 
 /* =============================================================
@@ -330,4 +330,226 @@ select {
   color: var(--text-primary) !important;
   border: 1px solid var(--border-color) !important;
   box-shadow: var(--shadow-md) !important;
+}
+
+/* =============================================================
+   RESPONSIVE UTILITIES
+   ============================================================= */
+
+/* --- Mobile Default Styles (Apply to all screens, overridden by larger breakpoints) --- */
+
+.mobile-only {
+  display: block;
+}
+
+.desktop-only {
+  display: none;
+}
+
+.hide-mobile {
+  display: none !important;
+}
+
+/* Sections & Spacing */
+.section-padding {
+  padding: 60px 20px;
+}
+
+.responsive-padding {
+  padding: 16px;
+}
+
+.header-responsive-padding {
+  padding: 12px 16px 12px 60px;
+  /* Reduced header padding mobile */
+}
+
+.main-responsive-padding {
+  padding: 16px;
+}
+
+/* Typography */
+.text-responsive-h1 {
+  font-size: 32px;
+  line-height: 1.2;
+}
+
+.text-responsive-h2 {
+  font-size: 24px;
+}
+
+.text-sm-mobile {
+  font-size: 12px;
+}
+
+.text-xs-mobile {
+  font-size: 10px;
+}
+
+/* Grids */
+.grid-responsive-2-1 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+.grid-responsive-3 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+.grid-responsive-2 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+.grid-stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.grid-compact {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+/* Compact Cards */
+.card-compact {
+  padding: 16px;
+}
+
+.card-compact .card-value {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.card-compact .card-label {
+  font-size: 12px;
+}
+
+.card-compact .card-icon {
+  width: 36px;
+  height: 36px;
+}
+
+/* Buttons */
+.btn-responsive {
+  padding: 10px 16px;
+  font-size: 14px;
+  width: 100%;
+  justify-content: center;
+}
+
+.btn-nav-responsive {
+  padding: 8px 12px;
+  font-size: 13px;
+}
+
+/* --- Desktop Overrides (min-width: 1024px) --- */
+@media (min-width: 1024px) {
+  .mobile-only {
+    display: none !important;
+  }
+
+  .desktop-only {
+    display: block !important;
+  }
+
+  .hide-mobile {
+    display: block !important;
+  }
+
+  /* Spacing */
+  .section-padding {
+    padding: 100px 24px;
+  }
+
+  .responsive-padding {
+    padding: 32px;
+  }
+
+  .header-responsive-padding {
+    padding: 16px 32px;
+  }
+
+  .main-responsive-padding {
+    padding: 32px;
+  }
+
+  /* Typography */
+  .text-responsive-h1 {
+    font-size: 64px;
+  }
+
+  .text-responsive-h2 {
+    font-size: 36px;
+  }
+
+  .text-sm-mobile {
+    font-size: 14px;
+  }
+
+  .text-xs-mobile {
+    font-size: 12px;
+  }
+
+  /* Grids */
+  .grid-responsive-2-1 {
+    grid-template-columns: 2fr 1fr;
+    gap: 24px;
+  }
+
+  .grid-responsive-3 {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+
+  .grid-responsive-2 {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .grid-stats {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
+
+  .grid-compact {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
+
+  /* Compact Cards */
+  .card-compact {
+    padding: 24px;
+  }
+
+  .card-compact .card-value {
+    font-size: 30px;
+  }
+
+  .card-compact .card-label {
+    font-size: 14px;
+  }
+
+  .card-compact .card-icon {
+    width: 44px;
+    height: 44px;
+  }
+
+  /* Buttons */
+  .btn-responsive {
+    padding: 16px 32px;
+    font-size: 16px;
+    width: auto;
+  }
+
+  .btn-nav-responsive {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
 }

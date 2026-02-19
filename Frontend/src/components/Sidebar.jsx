@@ -122,8 +122,8 @@ const Sidebar = () => {
             {/* Mobile Hamburger */}
             <button onClick={() => setMobileOpen(!mobileOpen)} style={{
                 position: 'fixed', top: '16px', left: '16px', zIndex: 50, padding: '8px', borderRadius: '12px',
-                background: 'white', border: '1px solid var(--border-color)', color: 'var(--text-primary)', cursor: 'pointer', display: 'none',
-            }} className="mobile-menu-btn">
+                background: 'white', border: '1px solid var(--border-color)', color: 'var(--text-primary)', cursor: 'pointer',
+            }} className="mobile-only mobile-menu-btn">
                 {mobileOpen ? <X size={20} /> : <Menu size={20} />}
             </button>
 
@@ -146,7 +146,7 @@ const Sidebar = () => {
             </AnimatePresence>
 
             {/* Desktop Sidebar */}
-            <motion.aside animate={{ width: collapsed ? 72 : 260 }} transition={{ type: 'spring', damping: 25, stiffness: 200 }}
+            <motion.aside animate={{ width: collapsed ? 72 : 260 }} transition={{ type: 'spring', damping: 25, stiffness: 200 }} className="desktop-only"
                 style={{ height: '100vh', position: 'sticky', top: 0, flexShrink: 0, background: 'white', borderRight: '1px solid var(--border-color)', overflow: 'visible', zIndex: 40 }}>
                 <SidebarContent />
                 <button onClick={() => setCollapsed(!collapsed)} style={{

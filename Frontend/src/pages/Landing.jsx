@@ -84,10 +84,9 @@ const Landing = () => {
                     <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
                         <Link
                             to="/login"
+                            className="btn-nav-responsive"
                             style={{
-                                padding: '10px 20px',
                                 borderRadius: '12px',
-                                fontSize: '14px',
                                 fontWeight: 500,
                                 color: 'var(--text-secondary)',
                                 border: '1px solid var(--border-color)',
@@ -108,10 +107,9 @@ const Landing = () => {
                         </Link>
                         <Link
                             to="/register"
+                            className="btn-nav-responsive"
                             style={{
-                                padding: '10px 20px',
                                 borderRadius: '12px',
-                                fontSize: '14px',
                                 fontWeight: 600,
                                 color: 'white',
                                 background: 'linear-gradient(135deg, #0ea5e9, #2563eb)',
@@ -136,13 +134,13 @@ const Landing = () => {
 
             {/* ===== HERO SECTION ===== */}
             <section
+                className="section-padding"
                 style={{
                     position: 'relative',
                     minHeight: '100vh',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    padding: '120px 24px 80px',
                     overflow: 'hidden',
                 }}
             >
@@ -193,8 +191,9 @@ const Landing = () => {
                         </div>
 
                         <h1
+                            className="text-responsive-h1"
                             style={{
-                                fontSize: 'clamp(36px, 6vw, 72px)', fontWeight: 800,
+                                fontWeight: 800,
                                 marginBottom: '24px', lineHeight: 1.1,
                                 fontFamily: 'Outfit, sans-serif', color: 'var(--text-primary)',
                             }}
@@ -213,9 +212,10 @@ const Landing = () => {
                         <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'center', gap: '16px' }}>
                             <Link
                                 to="/register"
+                                className="btn-responsive"
                                 style={{
                                     display: 'inline-flex', alignItems: 'center', gap: '8px',
-                                    padding: '16px 32px', borderRadius: '14px', fontSize: '16px', fontWeight: 600,
+                                    borderRadius: '14px', fontWeight: 600,
                                     color: 'white', background: 'linear-gradient(135deg, #0ea5e9, #2563eb)',
                                     boxShadow: '0 4px 20px rgba(14, 165, 233, 0.25)', textDecoration: 'none', transition: 'all 0.3s ease',
                                 }}
@@ -226,8 +226,10 @@ const Landing = () => {
                             </Link>
                             <Link
                                 to="/login"
+                                className="btn-responsive"
                                 style={{
-                                    padding: '16px 32px', borderRadius: '14px', fontSize: '16px', fontWeight: 500,
+                                    display: 'inline-flex', alignItems: 'center',
+                                    borderRadius: '14px', fontWeight: 500,
                                     color: 'var(--text-secondary)', border: '1px solid var(--border-color)',
                                     background: 'white', textDecoration: 'none', transition: 'all 0.2s ease',
                                     boxShadow: 'var(--shadow-sm)',
@@ -243,7 +245,7 @@ const Landing = () => {
             </section>
 
             {/* ===== FEATURES ===== */}
-            <section style={{ padding: '80px 24px 100px' }}>
+            <section className="section-padding">
                 <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
                     <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ textAlign: 'center', marginBottom: '64px' }}>
                         <h2 className="gradient-text" style={{ fontSize: '36px', fontWeight: 700, marginBottom: '16px' }}>Powerful Features</h2>
@@ -277,13 +279,13 @@ const Landing = () => {
             </section>
 
             {/* ===== STATS ===== */}
-            <section style={{ padding: '60px 24px 80px' }}>
+            <section className="section-padding">
                 <div style={{
-                    maxWidth: '960px', margin: '0 auto', borderRadius: '24px', padding: '48px 32px',
+                    maxWidth: '100%', margin: '0 auto', borderRadius: '24px', padding: '32px 20px',
                     background: 'linear-gradient(135deg, rgba(14, 165, 233, 0.06), rgba(37, 99, 235, 0.03))',
                     border: '1px solid rgba(14, 165, 233, 0.15)',
                 }}>
-                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '32px' }}>
+                    <div className="grid-stats" style={{ gap: '32px' }}>
                         {stats.map((stat, index) => (
                             <motion.div key={stat.label} initial={{ opacity: 0, scale: 0.8 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ delay: index * 0.1 }} style={{ textAlign: 'center' }}>
                                 <p className="gradient-text" style={{ fontSize: '36px', fontWeight: 700, marginBottom: '6px' }}>{stat.value}</p>
@@ -295,9 +297,9 @@ const Landing = () => {
             </section>
 
             {/* ===== CTA ===== */}
-            <section style={{ padding: '80px 24px 100px' }}>
+            <section className="section-padding">
                 <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ maxWidth: '720px', margin: '0 auto', textAlign: 'center' }}>
-                    <h2 style={{ fontSize: '36px', fontWeight: 700, marginBottom: '20px', color: 'var(--text-primary)' }}>
+                    <h2 className="text-responsive-h2" style={{ fontWeight: 700, marginBottom: '20px', color: 'var(--text-primary)' }}>
                         Ready to boost your <span className="gradient-text">productivity</span>?
                     </h2>
                     <p style={{ fontSize: '18px', marginBottom: '36px', color: 'var(--text-secondary)', lineHeight: 1.6 }}>
@@ -305,9 +307,10 @@ const Landing = () => {
                     </p>
                     <Link
                         to="/register"
+                        className="btn-responsive"
                         style={{
                             display: 'inline-flex', alignItems: 'center', gap: '8px',
-                            padding: '16px 36px', borderRadius: '14px', fontSize: '16px', fontWeight: 600,
+                            borderRadius: '14px', fontWeight: 600,
                             color: 'white', background: 'linear-gradient(135deg, #0ea5e9, #2563eb)',
                             boxShadow: '0 4px 20px rgba(14, 165, 233, 0.25)', textDecoration: 'none', transition: 'all 0.3s ease',
                         }}

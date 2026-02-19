@@ -62,37 +62,38 @@ const DashboardHome = () => {
     return (
         <div>
             {/* Stat Cards */}
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '16px', marginBottom: '24px' }}>
+            <div className="grid-compact" style={{ marginBottom: '24px' }}>
                 {statCards.map((card, index) => {
                     const Icon = card.icon;
                     return (
                         <motion.div key={card.label} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: index * 0.1 }}
+                            className="card-compact"
                             style={{
-                                padding: '24px', borderRadius: '16px', background: 'white', border: '1px solid var(--border-color)',
+                                borderRadius: '16px', background: 'white', border: '1px solid var(--border-color)',
                                 boxShadow: 'var(--shadow-sm)', transition: 'all 0.3s ease', cursor: 'default',
                             }}
                             onMouseEnter={(e) => { e.currentTarget.style.borderColor = card.color + '40'; e.currentTarget.style.transform = 'translateY(-2px)'; e.currentTarget.style.boxShadow = `0 8px 25px ${card.color}12`; }}
                             onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'var(--border-color)'; e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = 'var(--shadow-sm)'; }}
                         >
-                            <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', marginBottom: '16px' }}>
-                                <div style={{ width: '44px', height: '44px', borderRadius: '12px', display: 'flex', alignItems: 'center', justifyContent: 'center', background: card.bg, color: card.color }}>
-                                    <Icon size={22} />
+                            <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', marginBottom: '12px' }}>
+                                <div className="card-icon" style={{ borderRadius: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center', background: card.bg, color: card.color }}>
+                                    <Icon size={20} />
                                 </div>
                             </div>
-                            <p style={{ fontSize: '30px', fontWeight: 700, color: 'var(--text-primary)', marginBottom: '4px' }}>{card.value}</p>
-                            <p style={{ fontSize: '14px', color: 'var(--text-secondary)' }}>{card.label}</p>
+                            <p className="card-value" style={{ color: 'var(--text-primary)', marginBottom: '4px' }}>{card.value}</p>
+                            <p className="card-label" style={{ color: 'var(--text-secondary)' }}>{card.label}</p>
                         </motion.div>
                     );
                 })}
             </div>
 
             {/* Priority + Quick Actions */}
-            <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr', gap: '24px', marginBottom: '24px' }}>
+            <div className="grid-responsive-2-1" style={{ gap: '24px', marginBottom: '24px' }}>
                 <div style={{ padding: '28px', borderRadius: '16px', background: 'white', border: '1px solid var(--border-color)', boxShadow: 'var(--shadow-sm)' }}>
                     <h3 style={{ fontSize: '18px', fontWeight: 600, marginBottom: '20px', color: 'var(--text-primary)', display: 'flex', alignItems: 'center', gap: '8px' }}>
                         <BarChart3 size={20} style={{ color: '#0ea5e9' }} /> Priority Distribution
                     </h3>
-                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '16px' }}>
+                    <div className="grid-responsive-3" style={{ gap: '16px' }}>
                         {priorityCards.map((card) => {
                             const Icon = card.icon;
                             const pct = stats?.total ? Math.round((card.value / stats.total) * 100) : 0;
@@ -109,7 +110,7 @@ const DashboardHome = () => {
                             );
                         })}
                     </div>
-                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px', marginTop: '16px' }}>
+                    <div className="grid-responsive-2" style={{ gap: '16px', marginTop: '16px' }}>
                         <div style={{ padding: '16px', borderRadius: '14px', display: 'flex', alignItems: 'center', gap: '12px', background: 'var(--danger-light)', border: '1px solid rgba(220, 38, 38, 0.15)' }}>
                             <AlertTriangle size={20} style={{ color: 'var(--danger)' }} />
                             <div><p style={{ fontSize: '18px', fontWeight: 700, color: 'var(--danger)' }}>{stats?.overdue || 0}</p><p style={{ fontSize: '12px', color: 'var(--text-secondary)' }}>Overdue Tasks</p></div>

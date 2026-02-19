@@ -17,22 +17,22 @@ const DashboardLayout = () => {
             <Sidebar />
             <div style={{ flex: 1, display: 'flex', flexDirection: 'column', minHeight: '100vh', overflowX: 'hidden' }}>
                 {/* Header */}
-                <header style={{
-                    position: 'sticky', top: 0, zIndex: 30, padding: '16px 32px',
+                <header className="header-responsive-padding" style={{
+                    position: 'sticky', top: 0, zIndex: 30,
                     background: 'rgba(255, 255, 255, 0.9)', backdropFilter: 'blur(20px)', WebkitBackdropFilter: 'blur(20px)',
                     borderBottom: '1px solid var(--border-color)',
                 }}>
                     <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', maxWidth: '1280px', margin: '0 auto' }}>
-                        <div style={{ paddingLeft: '40px' }}>
+                        <div>
                             <h2 style={{ fontSize: '20px', fontWeight: 700, color: 'var(--text-primary)', marginBottom: '4px' }}>
                                 {getGreeting()}, <span className="gradient-text">{user?.name?.split(' ')[0] || 'User'}</span>
                             </h2>
-                            <p style={{ fontSize: '14px', color: 'var(--text-muted)' }}>
+                            <p className="hide-mobile" style={{ fontSize: '14px', color: 'var(--text-muted)' }}>
                                 {new Date().toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' })}
                             </p>
                         </div>
                         <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                            <div style={{ textAlign: 'right' }}>
+                            <div className="hide-mobile" style={{ textAlign: 'right' }}>
                                 <p style={{ fontSize: '14px', fontWeight: 500, color: 'var(--text-primary)' }}>{user?.name || 'User'}</p>
                                 <p style={{ fontSize: '12px', color: 'var(--text-muted)' }}>{user?.email}</p>
                             </div>
@@ -48,7 +48,7 @@ const DashboardLayout = () => {
                         </div>
                     </div>
                 </header>
-                <main style={{ flex: 1, padding: '32px' }}>
+                <main className="main-responsive-padding" style={{ flex: 1 }}>
                     <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
                         <Outlet />
                     </div>
