@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: mern-dashboard-backend
+    env: node
+    plan: free
+    region: ohio
+    buildCommand: npm install
+    startCommand: node server.js
+    envVars:
+      - key: PORT
+        value: 5000
+      - key: NODE_ENV
+        value: production
+    # Add other environment variables in the Render Dashboard:
+    # CLIENT_URL, MONGO_URI, JWT_SECRET
